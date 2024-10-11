@@ -1,0 +1,12 @@
+* {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+h2, p {
+  color: #262633;
+}
+
+h2 {
+  font-size: 22px !important;
+  line-height: 26px !important;
+}
