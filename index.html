@@ -11,27 +11,44 @@
 <body class="max-w-[942px] my-0 mx-auto">
   <footer class="p-4">
     <!-- Mobile -->
-    <div class="flex flex-col md:flex-row justify-between md:hidden">
+    <div class="flex flex-col justify-center sm:hidden">
       <div class="flex flex-col">
-
+        <div class="flex py-4 justify-center">
+          <img src="img/support.png" alt="support" class="h-20 w-20"/>
+        </div>
+        <h2 class="font-light text-center">LHV <span class="font-bold">Klienditugi</span></h2>
+        <div class="flex flex-row justify-center py-4">
+          <img src="img/call.svg" alt="phone" class="min-w-[24px] min-h-[24px] pr-3"/>
+          <h2 class="font-light">6 800 400</h2>
+        </div>
+        <div class="flex flex-row justify-center">
+          <img src="img/drafts.svg" alt="phone" class="min-w-[24px] min-h-[24px] pr-3"/>
+          <h2 class="font-light">info@lhv.ee</h2>
+        </div>
       </div>
-      <p class="text-base">Kui sul tekib pangateenuse kasutamisel probleeme, saad klienditoe infotelefonilt abi ööpäev ringi.</p>
+      <p class="text-base text-center pt-6 pb-4">Kui sul tekib pangateenuse kasutamisel probleeme, saad klienditoe infotelefonilt abi ööpäev ringi.</p>
     </div>
 
     <!-- Desktop -->
-    <div class="hidden md:flex flex-row items-stretch">
+    <div class="hidden sm:flex flex-row items-stretch">
       <div class="flex flex-row basis-1/2">
-        <div class="pr-4">
-          <image src="img/support.png" alt="support" class="min-h-20 min-w-20"/>
+        <div class="pr-4 content-center">
+          <img src="img/support.png" alt="support" class="min-h-20 min-w-20"/>
         </div>
         <div class="flex flex-col justify-between">
-          <h2 class="font-light">LHV <span class="font-bold">Klienditugi</span></h2>
+          <h2 class="font-light pb-4">LHV <span class="font-bold">Klienditugi</span></h2>
           <p class="text-base font-normal">Kui sul tekib pangateenuse kasutamisel probleeme, saad klienditoe infotelefonilt abi ööpäev ringi.</p>
         </div>
       </div>
       <div class="flex flex-row justify-center basis-1/2">
-        <h2 class="font-light content-center pr-8"><i></i>6 800 400</h2>
-        <h2 class="font-light content-center">info@lhv.ee</h2>
+        <div class="flex flex-row items-center">
+          <img src="img/call.svg" alt="phone" class="min-w-[24px] min-h-[24px] pr-3"/>
+          <h2 class="font-light pr-8">6 800 400</h2>
+        </div>
+        <div class="flex flex-row items-center">
+          <img src="img/drafts.svg" alt="phone" class="min-w-[24px] min-h-[24px] pr-3"/>
+          <h2 class="font-light">info@lhv.ee</h2>
+        </div>
       </div>
     </div>
 
