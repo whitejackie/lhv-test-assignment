@@ -1,12 +1,84 @@
 * {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif !important;
 }
 
 h2, p {
   color: #262633;
 }
 
-h2 {
+h2, a {
   font-size: 22px !important;
   line-height: 26px !important;
+}
+
+input {
+  background-color: #F1EDEB !important;
+  outline: none;
+  border-bottom: 1px solid #C6C4C7;
+}
+
+td p {
+  border-bottom: 1px solid #C6C4C7;
+  margin-top: 0.5rem;
+  color: #89868D;
+}
+
+h1 {
+  font-size: 28px !important;
+  line-height: 34px !important;
+}
+
+button {
+  color: #6C6972;
+  font-weight: 500;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.phone {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('img/call.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 0.75rem;
+}
+
+.email {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('img/email.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 0.75rem;
+}
+
+.add {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('img/circle_plus.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 0.75rem;
+}
+
+.trash {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('img/trash.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 0.75rem;
 }

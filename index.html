@@ -5,32 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sisustuslaen</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="max-w-[942px] my-0 mx-auto">
+  <main>
+
+    <!-- Calculator -->
+    <div class="justify-center bg-[#F1EDEB] min-h-[380px] my-10">
+      <h1 class="my-0 mx-auto max-w-[456px] text-center font-light sm:pt-14 sm:pb-10 pt-12 pb-10 px-5 sm:px-0"><span class="font-bold">Koosta soovinimekiri</span> ja vaata oma uue sisustuse kuumakset</h1>
+      <div class="max-w-[617px] my-0 mx-auto">
+        <div class="max-w-[375px] mx-2">
+          <table id="calculator-table">
+            <thead>
+              <tr>
+                <th class="text-start font-light text-xs">TOODE</th>
+                <th class="text-start font-light text-xs">HIND</th>
+              </tr>
+            </thead>
+            <tr>
+              <td><input type="text" class="mr-6 mt-2"/></td>
+              <td class="flex flex-row"><input class="price mt-2" type="number" pattern="[0-9].[0-9]"/><p>€</p></td>
+            </tr>
+          </table>
+          <div class="pt-6 pb-14 flex flex-row justify-between">
+            <button class="font-light flex items-center" onclick="addRow()">
+              <i class="add"></i>
+              <span class="font-medium text-[#6C6972]">Lisa toode</span>
+            </button>
+            <button class="font-light flex items-center" onclick="deleteRow()">
+              <i class="trash"></i>
+              <span class="font-medium text-[#6C6972]">Kustuta</span>
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span id=""></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
   <footer class="p-4">
     <!-- Mobile -->
-    <div class="flex flex-col justify-center sm:hidden">
+    <div class="flex flex-col justify-center sm:hidden pt-6">
       <div class="flex flex-col">
         <div class="flex py-4 justify-center">
           <img src="img/support.png" alt="support" class="h-20 w-20"/>
         </div>
         <h2 class="font-light text-center">LHV <span class="font-bold">Klienditugi</span></h2>
         <div class="flex flex-row justify-center py-4">
-          <img src="img/call.svg" alt="phone" class="min-w-[24px] min-h-[24px] pr-3"/>
+          <i class="phone"></i>
           <h2 class="font-light">6 800 400</h2>
         </div>
         <div class="flex flex-row justify-center">
-          <img src="img/drafts.svg" alt="phone" class="min-w-[24px] min-h-[24px] pr-3"/>
-          <h2 class="font-light">info@lhv.ee</h2>
+          <i class="email"></i>
+          <a href="mailto:info@lhv.ee" class="font-light underline">info@lhv.ee</a>
         </div>
       </div>
       <p class="text-base text-center pt-6 pb-4">Kui sul tekib pangateenuse kasutamisel probleeme, saad klienditoe infotelefonilt abi ööpäev ringi.</p>
     </div>
 
     <!-- Desktop -->
-    <div class="hidden sm:flex flex-row items-stretch">
+    <div class="hidden sm:flex flex-row items-stretch py-8">
       <div class="flex flex-row basis-1/2">
         <div class="pr-4 content-center">
           <img src="img/support.png" alt="support" class="min-h-20 min-w-20"/>
@@ -42,16 +78,35 @@
       </div>
       <div class="flex flex-row justify-center basis-1/2">
         <div class="flex flex-row items-center">
-          <img src="img/call.svg" alt="phone" class="min-w-[24px] min-h-[24px] pr-3"/>
+          <i class="phone"></i>
           <h2 class="font-light pr-8">6 800 400</h2>
         </div>
         <div class="flex flex-row items-center">
-          <img src="img/drafts.svg" alt="phone" class="min-w-[24px] min-h-[24px] pr-3"/>
-          <h2 class="font-light">info@lhv.ee</h2>
+          <i class="email"></i>
+          <a href="mailto:info@lhv.ee" class="font-light underline">info@lhv.ee</a>
         </div>
       </div>
     </div>
-
   </footer>
 </body>
 </html>
+
+<script>
+  function addRow() {
+    const table = document.getElementById("calculator-table");
+    const row = table.insertRow(-1)
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = '<input type="text" class="mr-6 mt-2"/>'
+    cell2.innerHTML = '<input class="price mt-2" type="number" pattern="[0-9].[0-9]"/><p>€</p>'
+    cell2.classList.add("flex")
+    cell2.classList.add('flex-row')
+  }
+
+  function deleteRow() {
+    const table = document.getElementById("calculator-table");
+    if (table.rows.length > 2) {
+      table.deleteRow(-1)
+    }
+  }
+</script>
