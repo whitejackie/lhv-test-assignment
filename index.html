@@ -32,7 +32,7 @@
           </table>
 
           <!-- Buttons -->
-          <div class="pt-4 flex flex-row justify-between">
+          <div class="pt-4 flex flex-row justify-between pb-4">
             <button class="font-light flex items-center" onclick="addRow()">
               <i class="add"></i>
               <span class="font-medium text-[#6C6972]">Lisa toode</span>
@@ -113,6 +113,7 @@
     `;
 
     table.appendChild(newRow)
+    attachInputEvent()
   }
 
   function deleteRow() {
@@ -120,7 +121,30 @@
     if (table.rows.length > 2) {
       table.deleteRow(-1)
     }
+    calculateSum()
   }
 
+  function attachInputEvent() {
+    const priceInputs = document.querySelectorAll('.price');
+    
+    priceInputs.forEach(input => {
+      input.addEventListener('input', calculateSum);
+    });
+  }
   
+  function calculateSum() {
+    const priceInputs = document.querySelectorAll('.price');
+    let totalSum = 0;
+
+    priceInputs.forEach(input => {
+      let value = input.value.trim();
+      value = value.replace(',', '.');
+      const parsedValue = parseFloat(value);
+      if (!isNaN(parsedValue)) {
+        totalSum += parsedValue;
+      }
+    })
+    document.getElementById('sum').textContent = totalSum;
+  }
+  attachInputEvent()
 </script>
