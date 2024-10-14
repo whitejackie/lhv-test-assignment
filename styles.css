@@ -6,7 +6,7 @@ h2, p {
   color: #262633;
 }
 
-h2, a {
+footer h2, footer a {
   font-size: 22px !important;
   line-height: 26px !important;
 }
@@ -15,6 +15,7 @@ input {
   background-color: #F1EDEB !important;
   outline: none;
   border-bottom: 1px solid #C6C4C7;
+  color: #262633;
 }
 
 td p {
@@ -26,6 +27,14 @@ td p {
 h1 {
   font-size: 28px !important;
   line-height: 34px !important;
+}
+
+.product {
+  width: 212px;
+}
+
+.price {
+  width: 123px;
 }
 
 button {
