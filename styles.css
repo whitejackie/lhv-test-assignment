@@ -2,6 +2,10 @@
   font-family: 'Helvetica Neue', sans-serif !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h2, p {
   color: #262633;
 }
@@ -42,6 +46,10 @@ button {
   font-weight: 500;
 }
 
+.cut-image {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 51px), calc(100% - 51px) 100%, 0 100%);
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -52,11 +60,22 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.banner-animation::after {
+  position: absolute;
+  content:url('img/icons/arrow-down.svg');
+  padding-top: 1px;
+  margin-left: 8px;
+}
+
+.banner-animation:hover::after {
+  padding-top: 4px;
+}
+
 .phone {
   display: inline-block;
   width: 24px;
   height: 24px;
-  background-image: url('img/call.svg');
+  background-image: url('img/icons/call.svg');
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 0.75rem;
@@ -66,7 +85,7 @@ input[type=number] {
   display: inline-block;
   width: 24px;
   height: 24px;
-  background-image: url('img/email.svg');
+  background-image: url('img/icons/email.svg');
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 0.75rem;
@@ -76,7 +95,7 @@ input[type=number] {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url('img/circle_plus.svg');
+  background-image: url('img/icons/circle_plus.svg');
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 0.75rem;
@@ -86,7 +105,17 @@ input[type=number] {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url('img/trash.svg');
+  background-image: url('img/icons/trash.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 0.75rem;
+}
+
+.arrow-down {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('img/icons/arrow-down.svg');
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 0.75rem;
